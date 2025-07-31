@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://c8nod22b11rdq"]
+[gd_scene load_steps=3 format=3 uid="uid://c8nod22b11rdq"]
+
+[ext_resource type="Script" uid="uid://dic0jcmgh1g4a" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
+font_size = 24
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ig7tw")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -32,148 +38,167 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Chat" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.68
-text = "Lorem Ipsum
-"
-scroll_following = true
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "You gotta make it loop ✓"
+label_settings = SubResource("LabelSettings_7dm0k")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 ratio = 0.0541
 
-[node name="Colors" type="GridContainer" parent="MarginContainer/HBoxContainer/AspectRatioContainer2"]
+[node name="Colors" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect5" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect6" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect6" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect7" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect7" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect8" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect8" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect9" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect9" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect10" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect10" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect11" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect11" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect12" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect12" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect13" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect13" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect14" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect14" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect15" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect15" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect16" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect16" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect17" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect17" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect18" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect18" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect19" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect19" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
 
-[node name="ColorRect20" type="ColorRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="ColorRect20" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.264389, 0.264389, 0.264389, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Play"
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Tick: 0/100"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Grid" type="GridContainer" parent="MarginContainer/HBoxContainer/AspectRatioContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 20
@@ -2577,3 +2602,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
