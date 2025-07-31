@@ -1,26 +1,23 @@
-class_name ReplicatorCell
+class_name InfectorCell
 extends Cell
 
 
 func _init(_color_rect: ColorRect) -> void:
-	color = Color.ANTIQUE_WHITE
+	color = Color.MEDIUM_PURPLE
 	color_rect = _color_rect
 	color_rect.color = color
 
 
 func tick():
-	var replicator_neigbours: int = 0
+	var infector_neigbours: int = 0
 	for cell in neighbours:
 		if cell is DestroyerCell:
 			return DeadCell.new(color_rect)
-			
-		if cell is InfectorCell:
-			return InfectorCell.new(color_rect)
 		
-		if cell is ReplicatorCell:
-			replicator_neigbours += 1
+		if cell is InfectorCell:
+			infector_neigbours += 1
 
-	if replicator_neigbours >= 4:
+	if infector_neigbours >= 2:
 		return DeadCell.new(color_rect)
 	else:
 		return self

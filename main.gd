@@ -5,6 +5,8 @@ enum CellTypes {
 	ALIVE,
 	DESTROYER,
 	REPLICATOR,
+	INFECTOR,
+	WALL,
 }
 
 enum GridPhases {
@@ -97,6 +99,10 @@ func _on_cell_selected(cell: UICell):
 			grid[cell.grid_position.x][cell.grid_position.y] = DestroyerCell.new(cell)
 		CellTypes.REPLICATOR:
 			grid[cell.grid_position.x][cell.grid_position.y] = ReplicatorCell.new(cell)
+		CellTypes.INFECTOR:
+			grid[cell.grid_position.x][cell.grid_position.y] = InfectorCell.new(cell)
+		CellTypes.WALL:
+			grid[cell.grid_position.x][cell.grid_position.y] = WallCell.new(cell)
 
 
 func _on_setup_pressed() -> void:
@@ -148,3 +154,13 @@ func _on_destroyer_gui_input(event: InputEvent) -> void:
 func _on_replicator_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		selected_cell_type = CellTypes.REPLICATOR
+
+
+func _on_infector_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		selected_cell_type = CellTypes.INFECTOR
+
+
+func _on_wall_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		selected_cell_type = CellTypes.WALL

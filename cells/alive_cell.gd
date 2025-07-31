@@ -13,6 +13,9 @@ func tick():
 	for cell in neighbours:
 		if cell is DestroyerCell:
 			return DeadCell.new(color_rect)
+			
+		if cell is InfectorCell:
+			return InfectorCell.new(color_rect)
 		
 		if cell is AliveCell:
 			alive_neigbours += 1

@@ -86,17 +86,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.97801, 0.679376, 0.45094, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="Infector" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
+color = Color(0.752842, 0.324251, 0.814159, 1)
 
-[node name="ColorRect6" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
+[node name="Wall" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
+color = Color(0.415486, 0.279244, 0.117507, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
 layout_mode = 2
@@ -215,6 +215,8 @@ wait_time = 0.537
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Alive" to="." method="_on_alive_gui_input"]
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Destroyer" to="." method="_on_destroyer_gui_input"]
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Replicator" to="." method="_on_replicator_gui_input"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Infector" to="." method="_on_infector_gui_input"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Wall" to="." method="_on_wall_gui_input"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Setup" to="." method="_on_setup_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Play" to="." method="_on_play_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
