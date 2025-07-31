@@ -3,6 +3,7 @@ extends RefCounted
 
 
 var color_rect: ColorRect
+var color: Color = Color.BLACK
 var neighbours: Array[Cell]
 
 

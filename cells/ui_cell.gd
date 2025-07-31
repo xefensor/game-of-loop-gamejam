@@ -9,7 +9,6 @@ func _init(_grid_position: Vector2i) -> void:
 	grid_position = _grid_position
 	gui_input.connect(_on_gui_input)
 	
-	print(grid_position)
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
 	
