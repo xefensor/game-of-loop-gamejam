@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 script = ExtResource("2_h2yge")
 grid_size = Vector2i(4, 3)
 cells = Array[ExtResource("4_1bvp3")]([SubResource("Resource_lquwl"), SubResource("Resource_7mycd"), SubResource("Resource_272bh")])
-text = ""
+text = "Good job! Now the grid has changed and you got a new color. Figure out what it does and don't forget atleast one white cell has to survive."
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
