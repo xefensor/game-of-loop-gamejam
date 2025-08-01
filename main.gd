@@ -66,6 +66,8 @@ func load_level(level: Level):
 		%Colors.add_child(ui)
 
 	selected_level_cell = %Colors.get_child(0).level_cell
+	
+	%Chat.text = level.text
 
 
 func tick():
