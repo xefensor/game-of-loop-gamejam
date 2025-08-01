@@ -26,9 +26,12 @@ var tick_count: int = 0:
 	set(new_val):
 		tick_count = new_val
 		%TickLabel.text = "Tick: " + str(tick_count) + "/100"
+var level_index: int = 0
+
 
 func _ready():
 	load_level(levels[0])
+
 
 func load_level(level: Level):
 	grid = []
@@ -87,6 +90,7 @@ func tick():
 	
 	if tick_count == 100:
 		check_alive_cells()
+		check_spend_cells()
 	
 	
 func check_alive_cells() -> bool:
@@ -99,6 +103,17 @@ func check_alive_cells() -> bool:
 			if cell is AliveCell:
 				return true
 	return false
+	
+	
+func check_spend_cells() -> bool:
+	var black = false
+	for cell in %Colors.get_children():
+		if not black:
+			black = true
+			continue
+		if cell.level_cell.amount != 0:
+			return false
+	return true
 	
 
 func connect_cells(grid: Array):
