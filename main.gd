@@ -15,7 +15,7 @@ enum GridPhases {
 	PAUSE,
 }
 
-var grid_size = Vector2i(15, 15)
+@export var grid_size := Vector2i(4, 4)
 var grid = []
 var simulation_grid = []
 var selected_cell_type: CellTypes = CellTypes.DEAD
@@ -27,7 +27,7 @@ var tick_count: int = 0:
 
 func _ready():
 	var ui_cell_count = 0
-	%Grid.columns = grid_size.y
+	%Grid.columns = grid_size.x
 		
 	for y in range(grid_size.y):
 		var row = []
@@ -59,27 +59,30 @@ func tick():
 
 
 func connect_cells(grid: Array):
-	for y in range(grid.front().size()):
-		for x in range(grid.size()):
+	var row_count = grid.size()
+	var col_count = grid[0].size()
+	for y in range(row_count):
+		for x in range(col_count):
 			var cell: Cell = grid[y][x]
 			cell.neighbours.clear()
 			
-			if y > 0 and x > 0:
-				cell.neighbours.append(grid[y-1][x-1])
 			if y > 0:
+				if x > 0:
+					cell.neighbours.append(grid[y-1][x-1])
 				cell.neighbours.append(grid[y-1][x])
-			if y > 0 and x < grid_size.x - 1:
-				cell.neighbours.append(grid[y-1][x+1])
+				if x < col_count - 1:
+					cell.neighbours.append(grid[y-1][x+1])
 			if x > 0:
 				cell.neighbours.append(grid[y][x-1])
-			if x < grid_size.x - 1:
+			if x < col_count - 1:
 				cell.neighbours.append(grid[y][x+1])
-			if y < grid_size.y - 1 and x > 0:
-				cell.neighbours.append(grid[y+1][x-1])
-			if y < grid_size.y - 1:
+			if y < row_count - 1:
+				if x > 0:
+					cell.neighbours.append(grid[y+1][x-1])
 				cell.neighbours.append(grid[y+1][x])
-			if y < grid_size.y - 1 and x < grid_size.x - 1:
-				cell.neighbours.append(grid[y+1][x+1])
+				if x < col_count - 1:
+					cell.neighbours.append(grid[y+1][x+1])
+
 
 
 func _on_timer_timeout() -> void:
@@ -132,8 +135,8 @@ func _on_play_pressed() -> void:
 	
 
 func color_grid(grid):
-	for y in range(grid.front().size()):
-		for x in range(grid.size()):
+	for y in range(grid.size()):
+		for x in range(grid.front().size()):
 			grid[y][x].color_rect.color = grid[y][x].color
 			
 

@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
+grid_size = Vector2i(3, 4)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -209,7 +210,7 @@ size_flags_horizontal = 3
 columns = 20
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.537
+wait_time = 0.288
 
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Dead" to="." method="_on_dead_gui_input"]
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Alive" to="." method="_on_alive_gui_input"]
