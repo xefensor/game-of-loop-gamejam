@@ -10,19 +10,17 @@ func _init(_color_rect: ColorRect) -> void:
 
 
 func tick():
+	var replicator_neighbours: int = 0
 	var alive_neigbours: int = 0
-	var replicatpr_neighbours: int = 0
+	
 	for cell in neighbours:
 		if cell is ReplicatorCell:
-			replicatpr_neighbours += 1
-		
+			replicator_neighbours += 1
 		if cell is AliveCell:
 			alive_neigbours += 1
 	
-	if replicatpr_neighbours >= 3:
+	if replicator_neighbours >= 3:
 		return ReplicatorCell.new(color_rect)
-			
 	if alive_neigbours == 3:
 		return AliveCell.new(color_rect)
-	else:
-		return self
+	return self

@@ -11,7 +11,9 @@ func _init(_grid_position: Vector2i) -> void:
 	
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	
 	
 func _on_gui_input(event: InputEvent):
-	if event is InputEventMouseButton and event.pressed:
+	if event.is_pressed():
 		cell_selected.emit(self)
