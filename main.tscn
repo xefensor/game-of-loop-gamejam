@@ -1,8 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8nod22b11rdq"]
+[gd_scene load_steps=10 format=3 uid="uid://c8nod22b11rdq"]
 
 [ext_resource type="Script" uid="uid://dic0jcmgh1g4a" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_h2yge"]
 [ext_resource type="Resource" uid="uid://c1r5dlwwt6b88" path="res://levels/1.tres" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="4_1bvp3"]
+
+[sub_resource type="Resource" id="Resource_lquwl"]
+script = ExtResource("4_1bvp3")
+cell_type = 0
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_7mycd"]
+script = ExtResource("4_1bvp3")
+cell_type = 1
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_272bh"]
+script = ExtResource("4_1bvp3")
+cell_type = 2
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_5vw27"]
+script = ExtResource("2_h2yge")
+grid_size = Vector2i(4, 3)
+cells = Array[ExtResource("4_1bvp3")]([SubResource("Resource_lquwl"), SubResource("Resource_7mycd"), SubResource("Resource_272bh")])
+text = ""
+metadata/_custom_type_script = "uid://b60lqyiak2ctt"
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
 font_size = 24
@@ -15,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), SubResource("Resource_5vw27")])
 grid_size = Vector2i(3, 4)
 
 [node name="Panel" type="Panel" parent="."]
@@ -85,6 +111,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Tick: 0/100"
 
+[node name="NextLevel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Next Level"
+
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -100,4 +132,5 @@ wait_time = 0.288
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Setup" to="." method="_on_setup_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

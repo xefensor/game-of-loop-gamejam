@@ -27,6 +27,7 @@ var tick_count: int = 0:
 		tick_count = new_val
 		%TickLabel.text = "Tick: " + str(tick_count) + "/100"
 var level_index: int = 0
+var level_completed: bool = false
 
 
 func _ready():
@@ -38,6 +39,9 @@ func load_level(level: Level):
 	simulation_grid = []
 	grid_phase = GridPhases.SETUP
 	tick_count = 0
+	$Timer.stop()
+	level_completed = false
+	
 	
 	for child in %Colors.get_children():
 		child.queue_free()
@@ -89,9 +93,10 @@ func tick():
 	tick_count +=1
 	
 	if tick_count == 100:
-		check_alive_cells()
-		check_spend_cells()
-	
+		if check_alive_cells() and check_spend_cells():
+			level_completed = true
+			%NextLevel.visible = true
+
 	
 func check_alive_cells() -> bool:
 	var row_count = simulation_grid.size()
@@ -227,3 +232,11 @@ func color_grid(grid):
 
 func _on_type_cell_selected(cell: UICellType):
 	selected_level_cell = cell.level_cell
+
+
+func _on_next_level_pressed() -> void:
+	if not level_completed:
+		return
+	%NextLevel.visible = false
+	level_index += 1
+	load_level(levels[level_index])
