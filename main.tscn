@@ -84,6 +84,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "You gotta make it loop ✓"
 label_settings = SubResource("LabelSettings_7dm0k")
+autowrap_mode = 3
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

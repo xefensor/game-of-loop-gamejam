@@ -25,7 +25,7 @@ var grid_phase: GridPhases = GridPhases.SETUP
 var tick_count: int = 0:
 	set(new_val):
 		tick_count = new_val
-		%TickLabel.text = "Tick: " + str(tick_count) + "/100"
+		%TickLabel.text = "Loop: " + str(tick_count) + "/100"
 var level_index: int = 0
 var level_completed: bool = false
 
