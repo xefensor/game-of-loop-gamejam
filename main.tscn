@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8nod22b11rdq"]
+[gd_scene load_steps=11 format=3 uid="uid://c8nod22b11rdq"]
 
 [ext_resource type="Script" uid="uid://dic0jcmgh1g4a" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_h2yge"]
 [ext_resource type="Resource" uid="uid://c1r5dlwwt6b88" path="res://levels/1.tres" id="3_h2yge"]
+[ext_resource type="Resource" uid="uid://nqajk8s7r1uy" path="res://levels/god.tres" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="4_1bvp3"]
 
 [sub_resource type="Resource" id="Resource_lquwl"]
@@ -41,7 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), SubResource("Resource_5vw27")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), SubResource("Resource_5vw27"), ExtResource("3_lquwl")])
 grid_size = Vector2i(3, 4)
 
 [node name="Panel" type="Panel" parent="."]
