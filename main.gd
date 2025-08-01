@@ -84,7 +84,22 @@ func tick():
 	simulation_grid = temp_grid
 	
 	tick_count +=1
-
+	
+	if tick_count == 100:
+		check_alive_cells()
+	
+	
+func check_alive_cells() -> bool:
+	var row_count = simulation_grid.size()
+	var col_count = simulation_grid[0].size()
+	
+	for y in range(row_count):
+		for x in range(col_count):
+			var cell: Cell = simulation_grid[y][x]
+			if cell is AliveCell:
+				return true
+	return false
+	
 
 func connect_cells(grid: Array):
 	var row_count = grid.size()
