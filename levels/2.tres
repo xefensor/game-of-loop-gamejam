@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Level" load_steps=6 format=3 uid="uid://4pirjujfklfu"]
+
+[ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="1_ptqg0"]
+[ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_fuolx"]
+
+[sub_resource type="Resource" id="Resource_lquwl"]
+script = ExtResource("1_ptqg0")
+cell_type = 0
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_7mycd"]
+script = ExtResource("1_ptqg0")
+cell_type = 1
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_272bh"]
+script = ExtResource("1_ptqg0")
+cell_type = 2
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[resource]
+script = ExtResource("2_fuolx")
+grid_size = Vector2i(3, 3)
+cells = Array[ExtResource("1_ptqg0")]([SubResource("Resource_lquwl"), SubResource("Resource_7mycd"), SubResource("Resource_272bh")])
+text = "Good job! Now the grid has changed and you got a new color. Figure out what it does and don't forget atleast one white cell has to survive."
+metadata/_custom_type_script = "uid://b60lqyiak2ctt"

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Level" load_steps=6 format=3 uid="uid://rakcplqb704m"]
+
+[ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="1_5j7mv"]
+[ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_j7rip"]
+
+[sub_resource type="Resource" id="Resource_7mycd"]
+script = ExtResource("1_5j7mv")
+cell_type = 0
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_272bh"]
+script = ExtResource("1_5j7mv")
+cell_type = 1
+amount = 8
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_5vw27"]
+script = ExtResource("1_5j7mv")
+cell_type = 2
+amount = 5
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[resource]
+script = ExtResource("2_j7rip")
+grid_size = Vector2i(4, 4)
+cells = Array[ExtResource("1_5j7mv")]([SubResource("Resource_7mycd"), SubResource("Resource_272bh"), SubResource("Resource_5vw27")])
+text = ""
+metadata/_custom_type_script = "uid://b60lqyiak2ctt"
