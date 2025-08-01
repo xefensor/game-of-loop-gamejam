@@ -31,6 +31,17 @@ func _ready():
 	load_level(levels[0])
 
 func load_level(level: Level):
+	grid = []
+	simulation_grid = []
+	grid_phase = GridPhases.SETUP
+	tick_count = 0
+	
+	for child in %Colors.get_children():
+		child.queue_free()
+		
+	for child in %Grid.get_children():
+		child.queue_free()
+	
 	grid_size = level.grid_size
 	
 	var ui_cell_count = 0

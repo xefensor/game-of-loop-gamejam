@@ -4,6 +4,7 @@ extends ColorRect
 signal cell_selected(UICellType)
 
 var level_cell: LevelCell
+var label: Label
 
 
 func _init(_level_cell: LevelCell) -> void:
@@ -25,8 +26,25 @@ func _init(_level_cell: LevelCell) -> void:
 			color = Color.MEDIUM_PURPLE
 		Main.CellTypes.WALL:
 			color = Color.SADDLE_BROWN
+			
+	label = Label.new()
+	label.set_anchors_preset(Control.PRESET_HCENTER_WIDE)
+	var label_settings = LabelSettings.new()
+	label_settings.font_color = Color.BLACK
+	label.label_settings = label_settings
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	add_child(label)
+	
+	level_cell.amount_changed.connect(update_label)
+	
+	update_label(level_cell.amount)
 
 	
 func _on_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		cell_selected.emit(self)
+
+
+func update_label(amount: int):
+	label.text = str(amount)
