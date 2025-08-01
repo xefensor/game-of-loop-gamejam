@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8nod22b11rdq"]
+[gd_scene load_steps=5 format=3 uid="uid://c8nod22b11rdq"]
 
 [ext_resource type="Script" uid="uid://dic0jcmgh1g4a" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_h2yge"]
+[ext_resource type="Resource" uid="uid://c1r5dlwwt6b88" path="res://levels/1.tres" id="3_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
 font_size = 24
@@ -13,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge")])
 grid_size = Vector2i(3, 4)
 
 [node name="Panel" type="Panel" parent="."]
@@ -62,126 +65,8 @@ size_flags_stretch_ratio = 0.1
 ratio = 0.0541
 
 [node name="Colors" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Dead" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
-
-[node name="Alive" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Destroyer" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.784314, 0.156863, 0.156863, 1)
-
-[node name="Replicator" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.97801, 0.679376, 0.45094, 1)
-
-[node name="Infector" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.752842, 0.324251, 0.814159, 1)
-
-[node name="Wall" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.415486, 0.279244, 0.117507, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect9" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect10" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect11" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect12" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect13" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect14" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect15" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect16" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect17" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect18" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect19" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
-
-[node name="ColorRect20" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.264389, 0.264389, 0.264389, 1)
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -212,12 +97,6 @@ columns = 20
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.288
 
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Dead" to="." method="_on_dead_gui_input"]
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Alive" to="." method="_on_alive_gui_input"]
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Destroyer" to="." method="_on_destroyer_gui_input"]
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Replicator" to="." method="_on_replicator_gui_input"]
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Infector" to="." method="_on_infector_gui_input"]
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2/Colors/Wall" to="." method="_on_wall_gui_input"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Setup" to="." method="_on_setup_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Play" to="." method="_on_play_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
