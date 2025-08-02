@@ -17,7 +17,7 @@ enum GridPhases {
 }
 
 @export var levels: Array[Level]
-@export var grid_size := Vector2i(4, 4)
+var grid_size := Vector2i(4, 4)
 var grid = []
 var simulation_grid = []
 var selected_level_cell: LevelCell

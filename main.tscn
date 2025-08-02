@@ -51,7 +51,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), SubResource("Resource_dg77c"), ExtResource("3_lquwl")])
-grid_size = Vector2i(3, 4)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
