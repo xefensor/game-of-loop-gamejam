@@ -5,7 +5,7 @@ extends Cell
 func _init(_color_rect: ColorRect) -> void:
 	color = Color.ANTIQUE_WHITE
 	color_rect = _color_rect
-	color_rect.color = color
+	color_rect.color = Color.html("#f9c22b")
 
 
 func tick():

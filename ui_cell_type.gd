@@ -19,13 +19,13 @@ func _init(_level_cell: LevelCell) -> void:
 		Main.CellTypes.ALIVE:
 			color = Color.WHITE
 		Main.CellTypes.DESTROYER:
-			color = Color.DARK_RED
+			color =  Color.html("#c32454")
 		Main.CellTypes.REPLICATOR:
-			color = Color.LIGHT_YELLOW
+			color =  Color.html("#f9c22b")
 		Main.CellTypes.INFECTOR:
-			color = Color.MEDIUM_PURPLE
+			color = Color.html("#a884f3")
 		Main.CellTypes.WALL:
-			color = Color.SADDLE_BROWN
+			color = Color.html("#9babb2")
 			
 	label = Label.new()
 	label.set_anchors_preset(Control.PRESET_HCENTER_WIDE)
