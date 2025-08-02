@@ -3,7 +3,7 @@ extends Cell
 
 
 func _init(_color_rect: ColorRect) -> void:
-	color = Color.BLACK
+	color = Color.html("#2e222f")
 	color_rect = _color_rect
 	color_rect.color = color
 

@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://4pirjujfklfu" path="res://levels/2.tres" id="4_lquwl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
-bg_color = Color(0.243137, 0.207843, 0.27451, 1)
+bg_color = Color(0.384314, 0.333333, 0.396078, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_lquwl"), ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_lquwl")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -131,8 +131,8 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 2
-theme_override_constants/v_separation = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
 columns = 20
 
 [node name="Timer" type="Timer" parent="."]

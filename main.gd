@@ -54,6 +54,16 @@ func load_level(level: Level):
 	
 	var ui_cell_count = 0
 	%Grid.columns = grid_size.x
+	var base_separation := 4
+	var min_separation := 1
+	var max_separation := 8
+
+	# Dynamicky zmenšuj separation podle velikosti gridu
+	var size_factor = clamp(base_separation - int(grid_size.x / 10), min_separation, max_separation)
+
+	%Grid.add_theme_constant_override("h_separation", size_factor)
+	%Grid.add_theme_constant_override("v_separation", size_factor)
+	
 		
 	for y in range(grid_size.y):
 		var row = []

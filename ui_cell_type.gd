@@ -15,7 +15,7 @@ func _init(_level_cell: LevelCell) -> void:
 	
 	match level_cell.cell_type:
 		Main.CellTypes.DEAD:
-			color = Color.BLACK
+			color = Color.html("#2e222f")
 		Main.CellTypes.ALIVE:
 			color = Color.WHITE
 		Main.CellTypes.DESTROYER:
@@ -30,7 +30,7 @@ func _init(_level_cell: LevelCell) -> void:
 	label = Label.new()
 	label.set_anchors_preset(Control.PRESET_HCENTER_WIDE)
 	var label_settings = LabelSettings.new()
-	label_settings.font_color = Color.BLACK
+	label_settings.font_color = Color.html("#2e222f")
 	label.label_settings = label_settings
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
