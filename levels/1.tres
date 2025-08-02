@@ -21,9 +21,9 @@ grid_size = Vector2i(10, 10)
 cells = Array[ExtResource("1_mtsqi")]([SubResource("Resource_mtsqi"), SubResource("Resource_k5225")])
 text = "Hello, xefensor the dev here!
 
-In this game your objective is to spend all available cells and make sure that atleast one of your white cells survives 100 loops.
+In this game your objective is to spend all available cells and make sure that at least one of your white cells survives 100 loops.
 
-Have fun!
+I will leave it up to you to figure out what each color does. The name of the game should help you a little.
 
-I will leave it up to you to figure out what each color does. The name of the game should help you a little."
+Have fun!"
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"
