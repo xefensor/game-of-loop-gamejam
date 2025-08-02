@@ -32,7 +32,7 @@ func _init(_level_cell: LevelCell) -> void:
 	var label_settings = LabelSettings.new()
 	label_settings.font_color = Color.html("#2e222f")
 	label_settings.font = preload("res://font.tres")
-	label_settings.font_size = 24
+	label_settings.font_size = 20
 	label.label_settings = label_settings
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER

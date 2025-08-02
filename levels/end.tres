@@ -43,7 +43,15 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 script = ExtResource("2_6a7ky")
 grid_size = Vector2i(25, 25)
 cells = Array[ExtResource("1_vxbmg")]([SubResource("Resource_vxbmg"), SubResource("Resource_6a7ky"), SubResource("Resource_bys5a"), SubResource("Resource_bjxag"), SubResource("Resource_6ebg5"), SubResource("Resource_fgfis")])
-text = "The End! Go wild!
+text = "The End! Good work!
+
+I hope that you had fun and that it was a little bit of a challange for you.
+
+You can test out all the cells on this big grid.
+
+This game is based on Conway's Game of Life.
+
+You can find the source code on my GitHub. Link is in the Itch.io description.
 
 
 Special thanks to:

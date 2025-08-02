@@ -25,7 +25,5 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 script = ExtResource("2_56ujw")
 grid_size = Vector2i(4, 4)
 cells = Array[ExtResource("1_q8usi")]([SubResource("Resource_5vw27"), SubResource("Resource_kek77"), SubResource("Resource_272bh")])
-text = "I don't really like this purple guy, he's kinda pain in the ass.
-
-You will see."
+text = "I don't like purple cells. They get everywhere."
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"

@@ -1,4 +1,4 @@
 [gd_resource type="SystemFont" format=3 uid="uid://bshntagshj5xa"]
 
 [resource]
-font_names = PackedStringArray("Noto Sans")
+font_names = PackedStringArray("Noto Sans", "Inter")
