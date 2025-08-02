@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_kek77"), ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_lquwl")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), ExtResource("3_kek77"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_lquwl")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -39,25 +39,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Chat" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Chat" type="Label" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -65,30 +56,57 @@ size_flags_vertical = 1
 text = "You gotta make it loop ✓"
 autowrap_mode = 3
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.93
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorsAspect" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.16
 ratio = 0.1284
 alignment_horizontal = 2
 
-[node name="Colors" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2"]
+[node name="Colors" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorsAspect"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/v_separation = 8
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="GridAspect" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/GridAspect"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 20
+
+[node name="Controls" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Setup" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Setup" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 layout_mode = 2
 text = "Setup"
 
-[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 layout_mode = 2
 text = "Play/Pause"
 
-[node name="TimerSpeed" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="TimerSpeed" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -98,7 +116,7 @@ max_value = 0.95
 step = 0.01
 value = 0.1
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TimerSpeed"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls/TimerSpeed"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -106,41 +124,31 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -44.0
-offset_top = -32.0
+offset_top = -36.0
 offset_right = 45.0
-offset_bottom = -9.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Loop speed"
 
-[node name="TickLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="TickLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 8
 text = "Tick: 0/100"
 
-[node name="NextLevel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="NextLevel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 disabled = true
 text = "Next Level"
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Grid" type="GridContainer" parent="MarginContainer/HBoxContainer/AspectRatioContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
-columns = 20
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.535
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Setup" to="." method="_on_setup_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Play" to="." method="_on_play_pressed"]
-[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TimerSpeed" to="." method="_on_timer_speed_value_changed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Controls/Setup" to="." method="_on_setup_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Controls/Play" to="." method="_on_play_pressed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/Controls/TimerSpeed" to="." method="_on_timer_speed_value_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Controls/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
