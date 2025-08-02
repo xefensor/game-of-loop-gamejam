@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8nod22b11rdq"]
+[gd_scene load_steps=14 format=3 uid="uid://c8nod22b11rdq"]
 
 [ext_resource type="Script" uid="uid://dic0jcmgh1g4a" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_h2yge"]
@@ -9,9 +9,17 @@
 [ext_resource type="Resource" uid="uid://dig2pdtogcqok" path="res://levels/6.tres" id="3_kek77"]
 [ext_resource type="Resource" uid="uid://nqajk8s7r1uy" path="res://levels/end.tres" id="3_lquwl"]
 [ext_resource type="Resource" uid="uid://4pirjujfklfu" path="res://levels/2.tres" id="4_lquwl"]
+[ext_resource type="SystemFont" uid="uid://bshntagshj5xa" path="res://font.tres" id="10_4c57u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 bg_color = Color(0.243137, 0.207843, 0.27451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font = ExtResource("10_4c57u")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
+font = ExtResource("10_4c57u")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_kek77"), ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_lquwl")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_kek77"), ExtResource("3_lquwl")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -54,6 +62,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "You gotta make it loop ✓"
+label_settings = SubResource("LabelSettings_kek77")
 autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
@@ -100,10 +109,12 @@ layout_mode = 2
 
 [node name="Setup" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_4c57u")
 text = "Setup"
 
 [node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_4c57u")
 text = "Play/Pause"
 
 [node name="TimerSpeed" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
@@ -130,16 +141,19 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Loop speed"
+label_settings = SubResource("LabelSettings_4c57u")
 
 [node name="TickLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_4c57u")
 text = "Tick: 0/100"
 
 [node name="NextLevel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("10_4c57u")
 disabled = true
 text = "Next Level"
 
