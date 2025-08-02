@@ -5,6 +5,8 @@ var grid_position := Vector2i.ZERO
 var mouse_on_top: bool = false
 
 signal cell_selected(UICell)
+signal delete_cell(UICell)
+
 
 func _init(_grid_position: Vector2i) -> void:
 	grid_position = _grid_position
@@ -19,6 +21,8 @@ func _init(_grid_position: Vector2i) -> void:
 func _process(delta: float) -> void:
 	if mouse_on_top and Input.is_action_pressed("click"):
 		cell_selected.emit(self)
+	if mouse_on_top and Input.is_action_pressed("right_click"):
+		delete_cell.emit(self)
 
 
 func _on_mouse_entered():

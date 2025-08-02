@@ -61,6 +61,7 @@ func load_level(level: Level):
 			var ui_cell = UICell.new(Vector2i(y, x))
 			%Grid.add_child(ui_cell)
 			ui_cell.cell_selected.connect(_on_cell_selected)
+			ui_cell.delete_cell.connect(_on_delete_cell)
 			row.append(DeadCell.new(ui_cell))
 			ui_cell_count += 1
 		grid.append(row)
@@ -193,6 +194,40 @@ func _on_cell_selected(cell: UICell):
 			grid[cell.grid_position.x][cell.grid_position.y] = WallCell.new(cell)
 			
 	selected_level_cell.amount -= 1
+
+	for child in %Colors.get_children():
+		if child.level_cell.cell_type == cell_type:
+			child.level_cell.amount += 1
+			
+			
+func _on_delete_cell(cell: UICell):
+	if not grid_phase == GridPhases.SETUP:
+		return
+		
+	if %Colors.get_child(0).level_cell.amount == 0:
+		return
+	
+	var cell_type: CellTypes
+	var grid_cell: Cell = grid[cell.grid_position.x][cell.grid_position.y]
+	if grid_cell is DeadCell:
+		cell_type = CellTypes.DEAD
+	elif grid_cell is AliveCell:
+		cell_type = CellTypes.ALIVE
+	elif grid_cell is DestroyerCell:
+		cell_type = CellTypes.DESTROYER
+	elif grid_cell is ReplicatorCell:
+		cell_type = CellTypes.REPLICATOR
+	elif grid_cell is InfectorCell:
+		cell_type = CellTypes.INFECTOR
+	elif grid_cell is WallCell:
+		cell_type = CellTypes.WALL
+	
+	if cell_type == %Colors.get_child(0).level_cell.cell_type:
+		return
+	
+	grid[cell.grid_position.x][cell.grid_position.y] = DeadCell.new(cell)
+
+	%Colors.get_child(0).level_cell.amount -= 1
 
 	for child in %Colors.get_children():
 		if child.level_cell.cell_type == cell_type:
