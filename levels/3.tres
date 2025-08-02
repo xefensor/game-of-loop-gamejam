@@ -25,5 +25,5 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 script = ExtResource("2_j7rip")
 grid_size = Vector2i(4, 4)
 cells = Array[ExtResource("1_5j7mv")]([SubResource("Resource_7mycd"), SubResource("Resource_272bh"), SubResource("Resource_5vw27")])
-text = ""
+text = "Same rules, bigger grid. Shoud be easy, right?"
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"

@@ -25,5 +25,9 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 script = ExtResource("2_fuolx")
 grid_size = Vector2i(3, 3)
 cells = Array[ExtResource("1_ptqg0")]([SubResource("Resource_lquwl"), SubResource("Resource_7mycd"), SubResource("Resource_272bh")])
-text = "Good job! Now the grid has changed and you got a new color. Figure out what it does and don't forget atleast one white cell has to survive."
+text = "Good job!
+
+Now the grid has changed and you got a new color.
+
+Figure out what it does and don't forget atleast one white cell has to survive."
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"

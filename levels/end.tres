@@ -43,5 +43,9 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 script = ExtResource("2_6a7ky")
 grid_size = Vector2i(25, 25)
 cells = Array[ExtResource("1_vxbmg")]([SubResource("Resource_vxbmg"), SubResource("Resource_6a7ky"), SubResource("Resource_bys5a"), SubResource("Resource_bjxag"), SubResource("Resource_6ebg5"), SubResource("Resource_fgfis")])
-text = "The end! Go wild!"
+text = "The End! Go wild!
+
+
+Special thanks to:
+VVR - for game testing"
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"
