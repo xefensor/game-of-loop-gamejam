@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), ExtResource("3_kek77"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_lquwl")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_kek77"), ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), ExtResource("3_272bh"), ExtResource("3_5vw27"), ExtResource("3_lquwl")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -134,7 +134,6 @@ text = "Loop speed"
 [node name="TickLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 8
 text = "Tick: 0/100"
 
 [node name="NextLevel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Controls"]

@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="game of loop"
+config/name="Game of Loop"
 run/main_scene="uid://c8nod22b11rdq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.243137, 0.207843, 0.27451, 1)
+config/icon="uid://cfuwrfxk48vcm"
 
 [display]
 
