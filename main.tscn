@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://4pirjujfklfu" path="res://levels/2.tres" id="4_lquwl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
-bg_color = Color(0.384314, 0.333333, 0.396078, 1)
+bg_color = Color(0.243137, 0.207843, 0.27451, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
