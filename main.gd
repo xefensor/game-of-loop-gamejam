@@ -32,6 +32,7 @@ var level_completed: bool = false
 
 func _ready():
 	load_level(levels[0])
+	%TimerSpeed.value = $Timer.wait_time
 
 
 func load_level(level: Level):
@@ -95,7 +96,7 @@ func tick():
 	if tick_count == 100:
 		if check_alive_cells() and check_spend_cells():
 			level_completed = true
-			%NextLevel.visible = true
+			%NextLevel.disabled = false
 
 	
 func check_alive_cells() -> bool:
@@ -237,6 +238,10 @@ func _on_type_cell_selected(cell: UICellType):
 func _on_next_level_pressed() -> void:
 	if not level_completed:
 		return
-	%NextLevel.visible = false
+	%NextLevel.disabled = true
 	level_index += 1
 	load_level(levels[level_index])
+
+
+func _on_timer_speed_value_changed(value: float) -> void:
+	$Timer.wait_time = 1 - value

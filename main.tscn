@@ -1,11 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8nod22b11rdq"]
+[gd_scene load_steps=14 format=3 uid="uid://c8nod22b11rdq"]
 
 [ext_resource type="Script" uid="uid://dic0jcmgh1g4a" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_h2yge"]
 [ext_resource type="Resource" uid="uid://rakcplqb704m" path="res://levels/3.tres" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="3_272bh"]
 [ext_resource type="Resource" uid="uid://c1r5dlwwt6b88" path="res://levels/1.tres" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://nqajk8s7r1uy" path="res://levels/end.tres" id="3_lquwl"]
 [ext_resource type="Resource" uid="uid://4pirjujfklfu" path="res://levels/2.tres" id="4_lquwl"]
+
+[sub_resource type="Resource" id="Resource_5vw27"]
+script = ExtResource("3_272bh")
+cell_type = 0
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_kek77"]
+script = ExtResource("3_272bh")
+cell_type = 1
+amount = 266
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_4c57u"]
+script = ExtResource("3_272bh")
+cell_type = 2
+amount = 520
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_efxa6"]
+script = ExtResource("3_272bh")
+cell_type = 3
+amount = 800
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_dg77c"]
+script = ExtResource("2_h2yge")
+grid_size = Vector2i(3, 3)
+cells = Array[ExtResource("3_272bh")]([SubResource("Resource_5vw27"), SubResource("Resource_kek77"), SubResource("Resource_4c57u"), SubResource("Resource_efxa6")])
+text = ""
+metadata/_custom_type_script = "uid://b60lqyiak2ctt"
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dm0k"]
 font_size = 24
@@ -18,7 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-levels = Array[ExtResource("2_h2yge")]([ExtResource("3_7mycd"), ExtResource("3_lquwl"), ExtResource("4_lquwl"), ExtResource("3_h2yge")])
+levels = Array[ExtResource("2_h2yge")]([ExtResource("3_h2yge"), ExtResource("4_lquwl"), ExtResource("3_7mycd"), SubResource("Resource_dg77c"), ExtResource("3_lquwl")])
 grid_size = Vector2i(3, 4)
 
 [node name="Panel" type="Panel" parent="."]
@@ -36,10 +68,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -66,12 +98,14 @@ autowrap_mode = 3
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.1
-ratio = 0.0541
+size_flags_stretch_ratio = 0.16
+ratio = 0.1284
+alignment_horizontal = 2
 
 [node name="Colors" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AspectRatioContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/v_separation = 8
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -84,6 +118,31 @@ text = "Setup"
 layout_mode = 2
 text = "Play/Pause"
 
+[node name="TimerSpeed" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+min_value = 0.1
+max_value = 0.95
+step = 0.01
+value = 0.1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TimerSpeed"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -32.0
+offset_right = 45.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Loop speed"
+
 [node name="TickLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -91,8 +150,8 @@ text = "Tick: 0/100"
 
 [node name="NextLevel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
+disabled = true
 text = "Next Level"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
@@ -103,6 +162,8 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
 columns = 20
 
 [node name="Timer" type="Timer" parent="."]
@@ -110,5 +171,6 @@ wait_time = 0.535
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Setup" to="." method="_on_setup_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Play" to="." method="_on_play_pressed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TimerSpeed" to="." method="_on_timer_speed_value_changed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
