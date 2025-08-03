@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Level" load_steps=5 format=3 uid="uid://dpbjbteyem2bg"]
+
+[ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="1_5ho6e"]
+[ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_iep8q"]
+
+[sub_resource type="Resource" id="Resource_dg77c"]
+script = ExtResource("1_5ho6e")
+cell_type = 0
+amount = 3
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[sub_resource type="Resource" id="Resource_ycdy4"]
+script = ExtResource("1_5ho6e")
+cell_type = 1
+amount = 7
+metadata/_custom_type_script = "uid://dgbnkvs32mel1"
+
+[resource]
+script = ExtResource("2_iep8q")
+grid_size = Vector2i(3, 3)
+cells = Array[ExtResource("1_5ho6e")]([SubResource("Resource_dg77c"), SubResource("Resource_ycdy4")])
+text = "Nice work!
+
+Now the real puzzles start.
+
+Can you prevent them from collapsing?"
+metadata/_custom_type_script = "uid://b60lqyiak2ctt"
