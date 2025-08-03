@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Level" load_steps=9 format=3 uid="uid://dig2pdtogcqok"]
+[gd_resource type="Resource" script_class="Level" load_steps=7 format=3 uid="uid://dig2pdtogcqok"]
 
 [ext_resource type="Script" uid="uid://dgbnkvs32mel1" path="res://level_cell.gd" id="1_me2xh"]
 [ext_resource type="Script" uid="uid://b60lqyiak2ctt" path="res://level.gd" id="2_nqk38"]
@@ -12,36 +12,24 @@ metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 [sub_resource type="Resource" id="Resource_efxa6"]
 script = ExtResource("1_me2xh")
 cell_type = 1
-amount = 440
-metadata/_custom_type_script = "uid://dgbnkvs32mel1"
-
-[sub_resource type="Resource" id="Resource_dg77c"]
-script = ExtResource("1_me2xh")
-cell_type = 2
-amount = 571
-metadata/_custom_type_script = "uid://dgbnkvs32mel1"
-
-[sub_resource type="Resource" id="Resource_kek77"]
-script = ExtResource("1_me2xh")
-cell_type = 3
-amount = 589
+amount = 10
 metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 
 [sub_resource type="Resource" id="Resource_vivmo"]
 script = ExtResource("1_me2xh")
 cell_type = 4
-amount = 398
+amount = 1
 metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 
 [sub_resource type="Resource" id="Resource_me2xh"]
 script = ExtResource("1_me2xh")
 cell_type = 5
-amount = 733
+amount = 1
 metadata/_custom_type_script = "uid://dgbnkvs32mel1"
 
 [resource]
 script = ExtResource("2_nqk38")
-grid_size = Vector2i(8, 8)
-cells = Array[ExtResource("1_me2xh")]([SubResource("Resource_4c57u"), SubResource("Resource_efxa6"), SubResource("Resource_dg77c"), SubResource("Resource_kek77"), SubResource("Resource_vivmo"), SubResource("Resource_me2xh")])
-text = "Testing"
+grid_size = Vector2i(4, 4)
+cells = Array[ExtResource("1_me2xh")]([SubResource("Resource_4c57u"), SubResource("Resource_efxa6"), SubResource("Resource_vivmo"), SubResource("Resource_me2xh")])
+text = "Rock and Stone!"
 metadata/_custom_type_script = "uid://b60lqyiak2ctt"
